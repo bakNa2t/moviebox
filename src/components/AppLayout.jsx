@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import BoxList from "./BoxList";
+
 import PropTypes from "prop-types";
 
 import styles from "./AppLayout.module.css";
@@ -13,7 +15,7 @@ function AppLayout({ movies, watched }) {
     watched: PropTypes.array.isRequired,
   };
 
-  const [isOpen1, setIsOpen1] = useState(true);
+  // const [isOpen1, setIsOpen1] = useState(true);
   const [isOpen2, setIsOpen2] = useState(true);
 
   const avgImdbRating = average(watched.map((movie) => movie.imdbRating));
@@ -22,30 +24,7 @@ function AppLayout({ movies, watched }) {
 
   return (
     <main className={styles.main}>
-      <div className={styles.box}>
-        <button
-          className={styles["btn-toggle"]}
-          onClick={() => setIsOpen1((open) => !open)}
-        >
-          {isOpen1 ? "–" : "+"}
-        </button>
-        {isOpen1 && (
-          <ul className={styles.list}>
-            {movies?.map((movie) => (
-              <li key={movie.imdbID}>
-                <img src={movie.Poster} alt={`${movie.Title} poster`} />
-                <h3>{movie.Title}</h3>
-                <div>
-                  <p>
-                    <span>📅</span>
-                    <span>{movie.Year}</span>
-                  </p>
-                </div>
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
+      <BoxList movies={movies} />
 
       <div className={styles.box}>
         <button
