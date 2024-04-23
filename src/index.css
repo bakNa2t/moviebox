@@ -88,7 +88,7 @@ body {
   z-index: 999;
 }
 
-.list {
+/* .list {
   list-style: none;
   padding: 0.8rem 0;
   overflow: auto;
@@ -139,7 +139,7 @@ body {
   display: flex;
   align-items: center;
   gap: 0.8rem;
-}
+} */
 
 .btn-delete {
   position: absolute;
@@ -163,7 +163,7 @@ body {
 
 /* Summary */
 
-.summary {
+/* .summary {
   padding: 2.2rem 3.2rem 1.8rem 3.2rem;
   border-radius: 0.9rem;
   background-color: var(--color-background-100);
@@ -186,7 +186,7 @@ body {
   display: flex;
   align-items: center;
   gap: 0.8rem;
-}
+} */
 
 /* Details */
 
