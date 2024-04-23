@@ -8,24 +8,6 @@
   border-radius: 1rem;
 }
 
-/* Logo component */
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-}
-
-.logo span {
-  font-size: 3.2rem;
-}
-
-.logo h1 {
-  font-size: 2.4rem;
-  font-weight: 600;
-  color: #fff;
-}
-
 .num-results {
   justify-self: end;
   font-size: 1.8rem;

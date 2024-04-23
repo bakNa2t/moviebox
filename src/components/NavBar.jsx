@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 
 import Search from "./Search";
+import Logo from "./Logo";
 
 import styles from "./NavBar.module.css";
 
@@ -11,10 +12,7 @@ function NavBar({ movies }) {
 
   return (
     <nav className={styles["nav-bar"]}>
-      <div className={styles.logo}>
-        <span role="img">🎬</span>
-        <h1>MovieBox</h1>
-      </div>
+      <Logo />
       <Search />
       <p className={styles["num-results"]}>
         Found <strong>{movies.length}</strong> results
