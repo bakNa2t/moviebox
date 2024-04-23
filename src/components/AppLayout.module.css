@@ -6,16 +6,16 @@
   justify-content: center;
 }
 
-.box {
+/* .box {
   position: relative;
   width: 42rem;
   max-width: 42rem;
   border-radius: 0.9rem;
   overflow: auto;
   background-color: var(--color-background-500);
-}
+} */
 
-.btn-toggle {
+/* .btn-toggle {
   position: absolute;
   top: 0.8rem;
   right: 0.8rem;
@@ -29,9 +29,9 @@
   font-weight: bold;
   cursor: pointer;
   z-index: 999;
-}
+} */
 
-.list {
+/* .list {
   list-style: none;
   padding: 0.8rem 0;
   overflow: auto;
@@ -82,7 +82,7 @@
   display: flex;
   align-items: center;
   gap: 0.8rem;
-}
+} */
 
 .btn-delete {
   position: absolute;
@@ -106,7 +106,7 @@
 
 /* Summary */
 
-.summary {
+/* .summary {
   padding: 2.2rem 3.2rem 1.8rem 3.2rem;
   border-radius: 0.9rem;
   background-color: var(--color-background-100);
@@ -129,7 +129,7 @@
   display: flex;
   align-items: center;
   gap: 0.8rem;
-}
+} */
 
 /* Details */
 
