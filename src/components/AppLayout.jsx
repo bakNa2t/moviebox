@@ -2,13 +2,13 @@ import { useState } from "react";
 
 import PropTypes from "prop-types";
 
-import styles from "./Main.module.css";
+import styles from "./AppLayout.module.css";
 
 const average = (arr) =>
   arr.reduce((acc, cur, i, arr) => acc + cur / arr.length, 0);
 
-function Main({ movies, watched }) {
-  Main.propTypes = {
+function AppLayout({ movies, watched }) {
+  AppLayout.propTypes = {
     movies: PropTypes.array.isRequired,
     watched: PropTypes.array.isRequired,
   };
@@ -107,4 +107,4 @@ function Main({ movies, watched }) {
   );
 }
 
-export default Main;
+export default AppLayout;
