@@ -4,6 +4,7 @@ import Search from "./Search";
 import Logo from "./Logo";
 
 import styles from "./NavBar.module.css";
+import SearchResults from "./SearchResults";
 
 function NavBar({ movies }) {
   NavBar.propTypes = {
@@ -14,9 +15,7 @@ function NavBar({ movies }) {
     <nav className={styles["nav-bar"]}>
       <Logo />
       <Search />
-      <p className={styles["num-results"]}>
-        Found <strong>{movies.length}</strong> results
-      </p>
+      <SearchResults movies={movies} />
     </nav>
   );
 }
