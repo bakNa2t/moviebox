@@ -3,9 +3,7 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 
 import styles from "./BoxWatched.module.css";
-
-const average = (arr) =>
-  arr.reduce((acc, cur, i, arr) => acc + cur / arr.length, 0);
+import Summary from "./Summary";
 
 function BoxWatched({ watched }) {
   BoxWatched.propTypes = {
@@ -13,10 +11,6 @@ function BoxWatched({ watched }) {
   };
 
   const [isOpen2, setIsOpen2] = useState(true);
-
-  const avgImdbRating = average(watched.map((movie) => movie.imdbRating));
-  const avgUserRating = average(watched.map((movie) => movie.userRating));
-  const avgRuntime = average(watched.map((movie) => movie.runtime));
 
   return (
     <div className={styles.box}>
@@ -28,27 +22,7 @@ function BoxWatched({ watched }) {
       </button>
       {isOpen2 && (
         <>
-          <div className={styles.summary}>
-            <h2>Movies you watched</h2>
-            <div>
-              <p>
-                <span>#️⃣</span>
-                <span>{watched.length} movies</span>
-              </p>
-              <p>
-                <span>⭐️</span>
-                <span>{avgImdbRating}</span>
-              </p>
-              <p>
-                <span>🌟</span>
-                <span>{avgUserRating}</span>
-              </p>
-              <p>
-                <span>⏱</span>
-                <span>{avgRuntime} min</span>
-              </p>
-            </div>
-          </div>
+          <Summary watched={watched} />
 
           <ul className={styles.list}>
             {watched.map((movie) => (
