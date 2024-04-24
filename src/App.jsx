@@ -2,11 +2,12 @@ import { useState } from "react";
 
 import AppLayout from "./components/AppLayout";
 import BoxList from "./components/BoxList";
-import BoxWatched from "./components/BoxWatched";
 import MovieList from "./components/MovieList";
 import NavBar from "./components/NavBar";
 import Search from "./components/Search";
 import SearchResults from "./components/SearchResults";
+import Summary from "./components/Summary";
+import MovieListWatched from "./components/MovieListWatched";
 
 const tempMovieData = [
   {
@@ -69,7 +70,11 @@ export default function App() {
         <BoxList>
           <MovieList movies={movies} />
         </BoxList>
-        <BoxWatched watched={watched} />
+
+        <BoxList>
+          <Summary watched={watched} />
+          <MovieListWatched watched={watched} />
+        </BoxList>
       </AppLayout>
     </>
   );

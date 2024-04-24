@@ -1,5 +1,4 @@
 import { useState } from "react";
-// import MovieList from "./MovieList";
 
 import PropTypes from "prop-types";
 
@@ -10,17 +9,17 @@ function BoxList({ children }) {
     children: PropTypes.node.isRequired,
   };
 
-  const [isOpen1, setIsOpen1] = useState(true);
+  const [isOpen, setIsOpen] = useState(true);
 
   return (
     <div className={styles.box}>
       <button
         className={styles["btn-toggle"]}
-        onClick={() => setIsOpen1((open) => !open)}
+        onClick={() => setIsOpen((open) => !open)}
       >
-        {isOpen1 ? "–" : "+"}
+        {isOpen ? "–" : "+"}
       </button>
-      {isOpen1 && children}
+      {isOpen && children}
     </div>
   );
 }
