@@ -1,23 +1,13 @@
 import PropTypes from "prop-types";
 
-import Search from "./Search";
-import Logo from "./Logo";
-
 import styles from "./NavBar.module.css";
-import SearchResults from "./SearchResults";
 
-function NavBar({ movies }) {
+function NavBar({ children }) {
   NavBar.propTypes = {
-    movies: PropTypes.array.isRequired,
+    children: PropTypes.node.isRequired,
   };
 
-  return (
-    <nav className={styles["nav-bar"]}>
-      <Logo />
-      <Search />
-      <SearchResults movies={movies} />
-    </nav>
-  );
+  return <nav className={styles["nav-bar"]}>{children}</nav>;
 }
 
 export default NavBar;

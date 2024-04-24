@@ -2,6 +2,9 @@ import { useState } from "react";
 
 import AppLayout from "./components/AppLayout";
 import NavBar from "./components/NavBar";
+import Logo from "./components/Logo";
+import Search from "./components/Search";
+import SearchResults from "./components/SearchResults";
 
 const tempMovieData = [
   {
@@ -56,7 +59,11 @@ export default function App() {
 
   return (
     <>
-      <NavBar movies={movies} />
+      <NavBar movies={movies}>
+        <Logo />
+        <Search />
+        <SearchResults movies={movies} />
+      </NavBar>
       <AppLayout movies={movies} watched={watched} />
     </>
   );
