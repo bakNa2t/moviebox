@@ -1,13 +1,13 @@
 import { useState } from "react";
-import MovieList from "./MovieList";
+// import MovieList from "./MovieList";
 
 import PropTypes from "prop-types";
 
 import styles from "./BoxList.module.css";
 
-function BoxList({ movies }) {
+function BoxList({ children }) {
   BoxList.propTypes = {
-    movies: PropTypes.array.isRequired,
+    children: PropTypes.node.isRequired,
   };
 
   const [isOpen1, setIsOpen1] = useState(true);
@@ -20,7 +20,7 @@ function BoxList({ movies }) {
       >
         {isOpen1 ? "–" : "+"}
       </button>
-      {isOpen1 && <MovieList movies={movies} />}
+      {isOpen1 && children}
     </div>
   );
 }
