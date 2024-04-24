@@ -2,7 +2,6 @@ import { useState } from "react";
 
 import AppLayout from "./components/AppLayout";
 import NavBar from "./components/NavBar";
-import Logo from "./components/Logo";
 import Search from "./components/Search";
 import SearchResults from "./components/SearchResults";
 
@@ -59,8 +58,7 @@ export default function App() {
 
   return (
     <>
-      <NavBar movies={movies}>
-        <Logo />
+      <NavBar>
         <Search />
         <SearchResults movies={movies} />
       </NavBar>
