@@ -1,6 +1,8 @@
 import { useState } from "react";
 
 import AppLayout from "./components/AppLayout";
+import BoxList from "./components/BoxList";
+import BoxWatched from "./components/BoxWatched";
 import NavBar from "./components/NavBar";
 import Search from "./components/Search";
 import SearchResults from "./components/SearchResults";
@@ -62,7 +64,10 @@ export default function App() {
         <Search />
         <SearchResults movies={movies} />
       </NavBar>
-      <AppLayout movies={movies} watched={watched} />
+      <AppLayout>
+        <BoxList movies={movies} />
+        <BoxWatched watched={watched} />
+      </AppLayout>
     </>
   );
 }
