@@ -1,20 +1,32 @@
+import { useState } from "react";
+
 import RatingIcon from "./RatingIcon";
 
 import PropTypes from "prop-types";
 
-function Raiting({ rating }) {
+function Raiting({ maxRating = 5 }) {
   Raiting.propTypes = {
-    rating: PropTypes.number.isRequired,
+    maxRating: PropTypes.number.isRequired,
   };
+
+  const [rating, setRating] = useState(0);
+
+  function handleRating(rating) {
+    setRating(rating);
+  }
 
   return (
     <div>
       <div>
-        {Array.from({ length: rating }, (_, i) => (
-          <RatingIcon key={i} />
+        {Array.from({ length: maxRating }, (_, i) => (
+          <RatingIcon
+            key={i}
+            onRate={() => handleRating(i + 1)}
+            full={rating >= i + 1}
+          />
         ))}
       </div>
-      <p>10</p>
+      <p>{rating || ""}</p>
     </div>
   );
 }
