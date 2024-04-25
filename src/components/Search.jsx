@@ -1,9 +1,12 @@
-import { useState } from "react";
+import PropTypes from "prop-types";
 
 import styles from "./Search.module.css";
 
-function Search() {
-  const [query, setQuery] = useState("");
+function Search({ query, setQuery }) {
+  Search.propTypes = {
+    query: PropTypes.string.isRequired,
+    setQuery: PropTypes.func.isRequired,
+  };
 
   return (
     <input
