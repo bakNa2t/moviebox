@@ -70,7 +70,11 @@ export default function App() {
   const [queryId, setQueryId] = useState(null);
 
   function handleQyeryId(id) {
-    setQueryId(id);
+    setQueryId((queryId) => (queryId === id ? null : id));
+  }
+
+  function handleCloseMovieDetails() {
+    setQueryId(null);
   }
 
   useEffect(
@@ -126,7 +130,10 @@ export default function App() {
 
         <BoxList>
           {queryId ? (
-            <MovieDetails querydId={queryId} />
+            <MovieDetails
+              querydId={queryId}
+              onCloseMovieDetails={handleCloseMovieDetails}
+            />
           ) : (
             <>
               <Summary watched={watched} />

@@ -11,7 +11,7 @@ function MovieList({ movies, onQyeryId }) {
   };
 
   return (
-    <ul className={styles.list}>
+    <ul className={`${styles.list} ${styles["list-movies"]}`}>
       {movies?.map((movie) => (
         <MovieItem movie={movie} key={movie.imdbID} onQyeryId={onQyeryId} />
       ))}
