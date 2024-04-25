@@ -8,6 +8,7 @@ import Search from "./components/Search";
 import SearchResults from "./components/SearchResults";
 import Summary from "./components/Summary";
 import MovieListWatched from "./components/MovieListWatched";
+import Spinner from "./components/Spinner";
 
 const API_KEY = "f84fc31d";
 
@@ -67,15 +68,22 @@ export default function App() {
 
   useEffect(function () {
     async function fetchMovies() {
-      setIsLoading(true);
+      try {
+        setIsLoading(true);
 
-      const res = await fetch(
-        `http://www.omdbapi.com/?apikey=${API_KEY}&s=${query}`
-      );
-      const data = await res.json();
-      setMovies(data.Search);
+        const res = await fetch(
+          `http://www.omdbapi.com/?apikey=${API_KEY}&s=${query}`
+        );
 
-      setIsLoading(false);
+        if (!res.ok) throw new Error("Failed to fetch movies");
+
+        const data = await res.json();
+        setMovies(data.Search);
+
+        setIsLoading(false);
+      } catch (err) {
+        console.log(err);
+      }
     }
     fetchMovies();
   }, []);
@@ -88,7 +96,7 @@ export default function App() {
       </NavBar>
       <AppLayout>
         <BoxList>
-          {isLoading ? <p>Loading...</p> : <MovieList movies={movies} />}
+          {isLoading ? <Spinner /> : <MovieList movies={movies} />}
         </BoxList>
 
         <BoxList>
