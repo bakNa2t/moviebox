@@ -1,12 +1,13 @@
 import PropTypes from "prop-types";
 
-function MovieItem({ movie }) {
+function MovieItem({ movie, onQyeryId }) {
   MovieItem.propTypes = {
     movie: PropTypes.object.isRequired,
+    onQyeryId: PropTypes.func.isRequired,
   };
 
   return (
-    <li>
+    <li onClick={() => onQyeryId(movie.imdbID)}>
       <img src={movie.Poster} alt={`${movie.Title} poster`} />
       <h3>{movie.Title}</h3>
       <div>

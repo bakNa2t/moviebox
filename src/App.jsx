@@ -10,6 +10,7 @@ import Summary from "./components/Summary";
 import MovieListWatched from "./components/MovieListWatched";
 import Spinner from "./components/Spinner";
 import ErrorMessage from "./components/ErrorMessage";
+import MovieDetails from "./components/MovieDetails";
 
 const API_KEY = "f84fc31d";
 
@@ -66,8 +67,11 @@ export default function App() {
   const [query, setQuery] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const [queryId, setQueryId] = useState(null);
 
-  // const tempQuery = "Tron";
+  function handleQyeryId(id) {
+    setQueryId(id);
+  }
 
   useEffect(
     function () {
@@ -114,13 +118,21 @@ export default function App() {
       <AppLayout>
         <BoxList>
           {isLoading && <Spinner />}
-          {!isLoading && !error && <MovieList movies={movies} />}
+          {!isLoading && !error && (
+            <MovieList movies={movies} onQyeryId={handleQyeryId} />
+          )}
           {error && <ErrorMessage message={error} />}
         </BoxList>
 
         <BoxList>
-          <Summary watched={watched} />
-          <MovieListWatched watched={watched} />
+          {queryId ? (
+            <MovieDetails querydId={queryId} />
+          ) : (
+            <>
+              <Summary watched={watched} />
+              <MovieListWatched watched={watched} />
+            </>
+          )}
         </BoxList>
       </AppLayout>
     </>
