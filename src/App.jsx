@@ -80,12 +80,14 @@ export default function App() {
         if (!res.ok) throw new Error("Failed to fetch movies");
 
         const data = await res.json();
-        setMovies(data.Search);
 
-        setIsLoading(false);
+        if (data.Response === "False") throw new Error("No movies found");
+
+        setMovies(data.Search);
       } catch (err) {
-        console.log(err);
         setError(err.message);
+      } finally {
+        setIsLoading(false);
       }
     }
     fetchMovies();
