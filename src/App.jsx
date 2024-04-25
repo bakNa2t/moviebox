@@ -61,14 +61,21 @@ const tempWatchedData = [
 export default function App() {
   const [movies, setMovies] = useState([]);
   const [watched /*setWatched*/] = useState(tempWatchedData);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const query = "Tron";
 
   useEffect(function () {
     async function fetchMovies() {
+      setIsLoading(true);
+
       const res = await fetch(
-        `http://www.omdbapi.com/?apikey=${API_KEY}&s=Lord of the Rings`
+        `http://www.omdbapi.com/?apikey=${API_KEY}&s=${query}`
       );
       const data = await res.json();
       setMovies(data.Search);
+
+      setIsLoading(false);
     }
     fetchMovies();
   }, []);
@@ -81,7 +88,7 @@ export default function App() {
       </NavBar>
       <AppLayout>
         <BoxList>
-          <MovieList movies={movies} />
+          {isLoading ? <p>Loading...</p> : <MovieList movies={movies} />}
         </BoxList>
 
         <BoxList>
