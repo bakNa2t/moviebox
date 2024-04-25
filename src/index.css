@@ -66,12 +66,6 @@ body {
   font-weight: 600;
 }
 
-.error {
-  text-align: center;
-  font-size: 2rem;
-  padding: 4.8rem;
-}
-
 .btn-toggle {
   position: absolute;
   top: 0.8rem;

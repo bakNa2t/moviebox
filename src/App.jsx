@@ -9,6 +9,7 @@ import SearchResults from "./components/SearchResults";
 import Summary from "./components/Summary";
 import MovieListWatched from "./components/MovieListWatched";
 import Spinner from "./components/Spinner";
+import ErrorMessage from "./components/ErrorMessage";
 
 const API_KEY = "f84fc31d";
 
@@ -63,6 +64,7 @@ export default function App() {
   const [movies, setMovies] = useState([]);
   const [watched /*setWatched*/] = useState(tempWatchedData);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const query = "Tron";
 
@@ -83,6 +85,7 @@ export default function App() {
         setIsLoading(false);
       } catch (err) {
         console.log(err);
+        setError(err.message);
       }
     }
     fetchMovies();
@@ -96,7 +99,9 @@ export default function App() {
       </NavBar>
       <AppLayout>
         <BoxList>
-          {isLoading ? <Spinner /> : <MovieList movies={movies} />}
+          {isLoading && <Spinner />}
+          {!isLoading && !error && <MovieList movies={movies} />}
+          {error && <ErrorMessage message={error} />}
         </BoxList>
 
         <BoxList>
