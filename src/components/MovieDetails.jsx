@@ -7,7 +7,8 @@ import PropTypes from "prop-types";
 import styles from "./MovieDetails.module.css";
 import Spinner from "./Spinner";
 
-const API_KEY = "f84fc31d";
+// const API_KEY = "f84fc31d";
+const API_KEY = "6e111b46";
 
 function MovieDetails({ queryId, onCloseMovieDetails, onAddWatchedMovie }) {
   MovieDetails.propTypes = {
@@ -18,7 +19,7 @@ function MovieDetails({ queryId, onCloseMovieDetails, onAddWatchedMovie }) {
 
   const [movieDetails, setMovieDetails] = useState({});
   const [isLoading, setIsLoading] = useState(false);
-  const [/*userRating,*/ setUserRating] = useState(0);
+  const [userRating, setUserRating] = useState("");
 
   const {
     Title: title,
@@ -41,6 +42,7 @@ function MovieDetails({ queryId, onCloseMovieDetails, onAddWatchedMovie }) {
       poster,
       imdbRating: Number(imdbRating),
       runtime: Number(runtime.split(" ").at(0)),
+      userRating,
     };
 
     onAddWatchedMovie(newMovie);

@@ -11,10 +11,10 @@ function Rating({ maxRating, color, size, onSetRating }) {
     maxRating: PropTypes.number.isRequired,
     color: PropTypes.string.isRequired,
     size: PropTypes.number.isRequired,
-    onSetRating: PropTypes.func,
+    onSetRating: PropTypes.func.isRequired,
   };
 
-  const [rating, setRating] = useState("");
+  const [rating, setRating] = useState(0);
   const [tempRating, setTempRating] = useState(0);
 
   const text = {

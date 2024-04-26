@@ -12,7 +12,8 @@ import Spinner from "./components/Spinner";
 import ErrorMessage from "./components/ErrorMessage";
 import MovieDetails from "./components/MovieDetails";
 
-const API_KEY = "f84fc31d";
+// const API_KEY = "f84fc31d";
+const API_KEY = "6e111b46";
 
 // const tempMovieData = [
 //   {
