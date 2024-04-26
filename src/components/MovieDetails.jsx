@@ -65,7 +65,9 @@ function MovieDetails({ queryId, onCloseMovieDetails }) {
       </header>
 
       <section>
-        <Rating maxRating={10} color={"#fcc419"} size={24} />
+        <div className={styles["rating-container"]}>
+          <Rating maxRating={10} color={"#fcc419"} size={24} />
+        </div>
         <p>
           <em>{plot}</em>
         </p>
