@@ -5,6 +5,7 @@ import Rating from "./Rating";
 import PropTypes from "prop-types";
 
 import styles from "./MovieDetails.module.css";
+import Spinner from "./Spinner";
 
 const API_KEY = "f84fc31d";
 
@@ -15,6 +16,7 @@ function MovieDetails({ queryId, onCloseMovieDetails }) {
   };
 
   const [movieDetails, setMovieDetails] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
 
   const {
     Title: title,
@@ -32,13 +34,16 @@ function MovieDetails({ queryId, onCloseMovieDetails }) {
   useEffect(
     function () {
       async function fetchMovieDetails() {
+        setIsLoading(true);
+
         const res = await fetch(
           `http://www.omdbapi.com/?apikey=${API_KEY}&i=${queryId}`
         );
 
         const data = await res.json();
-        console.log(data);
         setMovieDetails(data);
+
+        setIsLoading(false);
       }
       fetchMovieDetails();
     },
@@ -47,33 +52,42 @@ function MovieDetails({ queryId, onCloseMovieDetails }) {
 
   return (
     <div className={styles.details}>
-      <header>
-        <button className={styles["btn-back"]} onClick={onCloseMovieDetails}>
-          &larr;
-        </button>
-        <img src={poster} alt={`${title} poster}`} />
-        <div className={styles["details-overview"]}>
-          <h2>{title}</h2>
-          <p>
-            {released} &bull; {runtime}
-          </p>
-          <p>{genre}</p>
-          <p>
-            <span>⭐️</span> {imdbRating} IMDB rating
-          </p>
-        </div>
-      </header>
+      {isLoading ? (
+        <Spinner />
+      ) : (
+        <>
+          <header>
+            <button
+              className={styles["btn-back"]}
+              onClick={onCloseMovieDetails}
+            >
+              &larr;
+            </button>
+            <img src={poster} alt={`${title} poster}`} />
+            <div className={styles["details-overview"]}>
+              <h2>{title}</h2>
+              <p>
+                {released} &bull; {runtime}
+              </p>
+              <p>{genre}</p>
+              <p>
+                <span>⭐️</span> {imdbRating} IMDB rating
+              </p>
+            </div>
+          </header>
 
-      <section>
-        <div className={styles["rating-container"]}>
-          <Rating maxRating={10} color={"#fcc419"} size={24} />
-        </div>
-        <p>
-          <em>{plot}</em>
-        </p>
-        <p>Starring: {actors}</p>
-        <p>Directored by: {director}</p>
-      </section>
+          <section>
+            <div className={styles["rating-container"]}>
+              <Rating maxRating={10} color={"#fcc419"} size={24} />
+            </div>
+            <p>
+              <em>{plot}</em>
+            </p>
+            <p>Starring: {actors}</p>
+            <p>Directored by: {director}</p>
+          </section>
+        </>
+      )}
     </div>
   );
 }

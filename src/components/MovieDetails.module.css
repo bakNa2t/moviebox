@@ -1,4 +1,7 @@
 .details {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   line-height: 1.4;
   font-size: 1.4rem;
 }
