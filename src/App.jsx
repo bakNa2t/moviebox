@@ -131,7 +131,7 @@ export default function App() {
         <BoxList>
           {queryId ? (
             <MovieDetails
-              querydId={queryId}
+              queryId={queryId}
               onCloseMovieDetails={handleCloseMovieDetails}
             />
           ) : (
