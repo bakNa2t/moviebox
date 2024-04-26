@@ -15,13 +15,14 @@ function RatingIcon({ onRate, full, onHoverIn, onHoverOut, color, size }) {
   const icon = {
     width: `${size}px`,
     height: `${size}px`,
+    display: "block",
     cursor: "pointer",
   };
 
   return (
     <span
       role="button"
-      className={icon}
+      style={icon}
       onClick={onRate}
       onMouseEnter={onHoverIn}
       onMouseLeave={onHoverOut}

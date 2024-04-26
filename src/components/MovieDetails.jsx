@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 
+import Rating from "./Rating";
+
 import PropTypes from "prop-types";
 
 import styles from "./MovieDetails.module.css";
@@ -63,6 +65,7 @@ function MovieDetails({ queryId, onCloseMovieDetails }) {
       </header>
 
       <section>
+        <Rating maxRating={10} color={"#fcc419"} size={24} />
         <p>
           <em>{plot}</em>
         </p>

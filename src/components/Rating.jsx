@@ -4,8 +4,10 @@ import RatingIcon from "./RatingIcon";
 
 import PropTypes from "prop-types";
 
-function Raiting({ maxRating = 5, color = "#fcc419", size = 24 }) {
-  Raiting.propTypes = {
+import styles from "./Rating.module.css";
+
+function Rating({ maxRating, color, size }) {
+  Rating.propTypes = {
     maxRating: PropTypes.number.isRequired,
     color: PropTypes.string.isRequired,
     size: PropTypes.number.isRequired,
@@ -18,7 +20,7 @@ function Raiting({ maxRating = 5, color = "#fcc419", size = 24 }) {
     lineHeight: "1",
     margin: "0",
     color,
-    fontSize: `${size}px`,
+    fontSize: `${size / 1.5}px`,
   };
 
   function handleRating(rating) {
@@ -26,8 +28,8 @@ function Raiting({ maxRating = 5, color = "#fcc419", size = 24 }) {
   }
 
   return (
-    <div>
-      <div>
+    <div className={styles.rating}>
+      <div className={styles["rating-icon"]}>
         {Array.from({ length: maxRating }, (_, i) => (
           <RatingIcon
             key={i}
@@ -40,9 +42,9 @@ function Raiting({ maxRating = 5, color = "#fcc419", size = 24 }) {
           />
         ))}
       </div>
-      <p className={text}>{tempRating || rating || ""}</p>
+      <p style={text}>{tempRating || rating || ""}</p>
     </div>
   );
 }
 
-export default Raiting;
+export default Rating;
