@@ -6,14 +6,15 @@ import PropTypes from "prop-types";
 
 import styles from "./Rating.module.css";
 
-function Rating({ maxRating, color, size }) {
+function Rating({ maxRating, color, size, onSetRating }) {
   Rating.propTypes = {
     maxRating: PropTypes.number.isRequired,
     color: PropTypes.string.isRequired,
     size: PropTypes.number.isRequired,
+    onSetRating: PropTypes.func,
   };
 
-  const [rating, setRating] = useState(0);
+  const [rating, setRating] = useState("");
   const [tempRating, setTempRating] = useState(0);
 
   const text = {
@@ -25,6 +26,7 @@ function Rating({ maxRating, color, size }) {
 
   function handleRating(rating) {
     setRating(rating);
+    onSetRating(rating);
   }
 
   return (

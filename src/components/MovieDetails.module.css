@@ -64,6 +64,22 @@
   justify-content: center;
 }
 
+.btn-add {
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  border: none;
+  border-radius: 10rem;
+  font-size: 1.4rem;
+  padding: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-add:hover {
+  background-color: var(--color-primary-light);
+}
+
 .rating-container {
   background-color: var(--color-background-100);
   border-radius: 0.9rem;

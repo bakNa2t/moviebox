@@ -225,7 +225,7 @@ body {
   gap: 0.8rem;
 } */
 
-.btn-add {
+/* .btn-add {
   background-color: var(--color-primary);
   color: var(--color-text);
   border: none;
@@ -239,7 +239,7 @@ body {
 
 .btn-add:hover {
   background-color: var(--color-primary-light);
-}
+} */
 
 .seconds {
   background-color: var(--color-background-100);

@@ -9,18 +9,20 @@ import Spinner from "./Spinner";
 
 const API_KEY = "f84fc31d";
 
-function MovieDetails({ queryId, onCloseMovieDetails }) {
+function MovieDetails({ queryId, onCloseMovieDetails, onAddWatchedMovie }) {
   MovieDetails.propTypes = {
     queryId: PropTypes.string.isRequired,
     onCloseMovieDetails: PropTypes.func.isRequired,
+    onAddWatchedMovie: PropTypes.func.isRequired,
   };
 
   const [movieDetails, setMovieDetails] = useState({});
   const [isLoading, setIsLoading] = useState(false);
+  const [/*userRating,*/ setUserRating] = useState(0);
 
   const {
     Title: title,
-    // Year: year,
+    Year: year,
     Poster: poster,
     imdbRating,
     Runtime: runtime,
@@ -30,6 +32,20 @@ function MovieDetails({ queryId, onCloseMovieDetails }) {
     Actors: actors,
     Genre: genre,
   } = movieDetails;
+
+  function handleAdd() {
+    const newMovie = {
+      imdbID: queryId,
+      title,
+      year,
+      poster,
+      imdbRating: Number(imdbRating),
+      runtime: Number(runtime.split(" ").at(0)),
+    };
+
+    onAddWatchedMovie(newMovie);
+    onCloseMovieDetails();
+  }
 
   useEffect(
     function () {
@@ -78,7 +94,15 @@ function MovieDetails({ queryId, onCloseMovieDetails }) {
 
           <section>
             <div className={styles["rating-container"]}>
-              <Rating maxRating={10} color={"#fcc419"} size={24} />
+              <Rating
+                maxRating={10}
+                color={"#fcc419"}
+                size={24}
+                onSetRating={setUserRating}
+              />
+              <button className={styles["btn-add"]} onClick={handleAdd}>
+                Add to List
+              </button>
             </div>
             <p>
               <em>{plot}</em>
