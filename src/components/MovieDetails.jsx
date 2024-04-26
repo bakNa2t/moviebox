@@ -102,9 +102,11 @@ function MovieDetails({ queryId, onCloseMovieDetails, onAddWatchedMovie }) {
                 size={24}
                 onSetRating={setUserRating}
               />
-              <button className={styles["btn-add"]} onClick={handleAdd}>
-                Add to List
-              </button>
+              {userRating > 0 && (
+                <button className={styles["btn-add"]} onClick={handleAdd}>
+                  Add to List
+                </button>
+              )}
             </div>
             <p>
               <em>{plot}</em>
