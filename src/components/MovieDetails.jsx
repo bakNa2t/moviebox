@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
 
 import Rating from "./Rating";
+import Spinner from "./Spinner";
 
 import PropTypes from "prop-types";
 
-import styles from "./MovieDetails.module.css";
-import Spinner from "./Spinner";
+import API_KEY from "../env/auth-key";
 
-// const API_KEY = "f84fc31d";
-const API_KEY = "6e111b46";
+import styles from "./MovieDetails.module.css";
 
 function MovieDetails({
   queryId,
