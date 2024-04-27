@@ -139,6 +139,7 @@ export default function App() {
               queryId={queryId}
               onCloseMovieDetails={handleCloseMovieDetails}
               onAddWatchedMovie={handleAddWatchedMovie}
+              watched={watched}
             />
           ) : (
             <>

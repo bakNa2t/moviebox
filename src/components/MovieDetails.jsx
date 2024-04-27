@@ -10,16 +10,31 @@ import Spinner from "./Spinner";
 // const API_KEY = "f84fc31d";
 const API_KEY = "6e111b46";
 
-function MovieDetails({ queryId, onCloseMovieDetails, onAddWatchedMovie }) {
+function MovieDetails({
+  queryId,
+  onCloseMovieDetails,
+  onAddWatchedMovie,
+  watched,
+}) {
   MovieDetails.propTypes = {
     queryId: PropTypes.string.isRequired,
     onCloseMovieDetails: PropTypes.func.isRequired,
     onAddWatchedMovie: PropTypes.func.isRequired,
+    watched: PropTypes.array.isRequired,
   };
 
   const [movieDetails, setMovieDetails] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [userRating, setUserRating] = useState("");
+
+  const isWathched = watched
+    .map((movie) => {
+      movie.imdbID;
+      console.log(movie.imdbID);
+    })
+    .includes(queryId);
+  console.log(isWathched);
+  console.log(queryId);
 
   const {
     Title: title,
@@ -96,16 +111,22 @@ function MovieDetails({ queryId, onCloseMovieDetails, onAddWatchedMovie }) {
 
           <section>
             <div className={styles["rating-container"]}>
-              <Rating
-                maxRating={10}
-                color={"#fcc419"}
-                size={24}
-                onSetRating={setUserRating}
-              />
-              {userRating > 0 && (
-                <button className={styles["btn-add"]} onClick={handleAdd}>
-                  Add to List
-                </button>
+              {!isWathched ? (
+                <>
+                  <Rating
+                    maxRating={10}
+                    color={"#fcc419"}
+                    size={24}
+                    onSetRating={setUserRating}
+                  />
+                  {userRating > 0 && (
+                    <button className={styles["btn-add"]} onClick={handleAdd}>
+                      Add to List
+                    </button>
+                  )}
+                </>
+              ) : (
+                <p>This movie is not in your list</p>
               )}
             </div>
             <p>
