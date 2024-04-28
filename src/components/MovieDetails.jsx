@@ -115,7 +115,7 @@ function MovieDetails({
                   <Rating
                     maxRating={10}
                     color={"#fcc419"}
-                    size={24}
+                    size={23}
                     onSetRating={setUserRating}
                   />
                   {userRating > 0 && (
