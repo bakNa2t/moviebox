@@ -3,6 +3,7 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 
 import styles from "./BoxList.module.css";
+import Button from "./Button";
 
 function BoxList({ children }) {
   BoxList.propTypes = {
@@ -13,12 +14,15 @@ function BoxList({ children }) {
 
   return (
     <div className={styles.box}>
-      <button
+      <Button onClick={() => setIsOpen((open) => !open)}>
+        {isOpen ? "–" : "+"}
+      </Button>
+      {/* <button
         className={styles["btn-toggle"]}
         onClick={() => setIsOpen((open) => !open)}
       >
         {isOpen ? "–" : "+"}
-      </button>
+      </button> */}
       {isOpen && children}
     </div>
   );
