@@ -38,8 +38,8 @@
 
 @media (max-width: 435px) {
   .main {
-    height: calc(100vh - 7.2rem - 3 * 2.4rem);
     flex-direction: column;
     justify-content: start;
+    align-items: center;
   }
 }

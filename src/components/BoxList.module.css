@@ -12,5 +12,6 @@
 @media (max-width: 435px) {
   .box {
     width: 100%;
+    height: 46rem;
   }
 }
