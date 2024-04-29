@@ -50,3 +50,15 @@
   align-items: center;
   gap: 0.8rem;
 }
+
+@media (max-width: 435px) {
+  .list li {
+    grid-template-columns: 6rem 1fr;
+    column-gap: 2.4rem;
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+  }
+  .list h3 {
+    font-size: 1.6rem;
+  }
+}
