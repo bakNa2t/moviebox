@@ -41,30 +41,13 @@ body {
   padding: 2.5rem 4rem;
 }
 
-.main {
-  margin-top: 2.4rem;
-  height: calc(100vh - 7.2rem - 3 * 2.4rem);
-  display: flex;
-  gap: 2.4rem;
-  justify-content: center;
-}
-
-.box {
-  position: relative;
-  width: 42rem;
-  max-width: 42rem;
-  border-radius: 0.9rem;
-  overflow: auto;
-  background-color: var(--color-background-500);
-}
-
-.loader {
+/* .loader {
   margin: 4.8rem;
   text-align: center;
   text-transform: uppercase;
   font-size: 2rem;
   font-weight: 600;
-}
+} */
 
 .btn-toggle {
   position: absolute;
@@ -251,28 +234,6 @@ body {
   margin-top: 2.4rem;
 }
 
-.btn-back {
-  position: absolute;
-  top: 0.6rem;
-  left: 0.6rem;
-  height: 3.2rem;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  border: none;
-  /* background-color: var(--color-text); */
-  background-color: #fff;
-  color: var(--color-background-500);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
-  font-family: sans-serif;
-  font-size: 2.4rem;
-  font-weight: bold;
-  cursor: pointer;
-  z-index: 999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 ::-webkit-scrollbar {
   width: 1rem;
 }
@@ -292,4 +253,10 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-background-100);
+}
+
+@media (max-width: 435px) {
+  body {
+    padding: 2.5rem 2rem;
+  }
 }
