@@ -15,3 +15,11 @@
 .search::placeholder {
   color: var(--color-text-dark);
 }
+
+@media (max-width: 435px) {
+  .search {
+    width: 20rem;
+    font-size: 1.4rem;
+    padding: 1rem 1.3rem;
+  }
+}

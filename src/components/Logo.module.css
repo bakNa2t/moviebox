@@ -13,3 +13,9 @@
   font-weight: 600;
   color: #fff;
 }
+
+@media (max-width: 435px) {
+  .logo h1 {
+    display: none;
+  }
+}

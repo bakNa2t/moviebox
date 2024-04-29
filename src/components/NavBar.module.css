@@ -7,3 +7,10 @@
   background-color: var(--color-primary);
   border-radius: 1rem;
 }
+
+@media (max-width: 435px) {
+  .nav-bar {
+    padding: 0 1rem;
+    gap: 2.5rem;
+  }
+}
