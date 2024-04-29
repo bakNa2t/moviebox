@@ -9,7 +9,7 @@ function ErrorMessage({ message }) {
 
   return (
     <p className={styles.error}>
-      <span>🚨</span>
+      <span>🚨 </span>
       {message}
     </p>
   );

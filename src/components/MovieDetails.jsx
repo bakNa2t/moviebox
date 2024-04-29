@@ -103,7 +103,7 @@ function MovieDetails({
               </p>
               <p>{genre}</p>
               <p>
-                <span>⭐️</span> {imdbRating} IMDB rating
+                IMDB rating <span>⭐️ </span> {imdbRating}
               </p>
             </div>
           </header>
@@ -131,8 +131,12 @@ function MovieDetails({
             <p>
               <em>{plot}</em>
             </p>
-            <p>Starring: {actors}</p>
-            <p>Directored by: {director}</p>
+            <p>
+              <span>Starring:</span> {actors}
+            </p>
+            <p>
+              <span>Directored by:</span> {director}
+            </p>
           </section>
         </>
       )}
