@@ -1,4 +1,8 @@
-.num-results {
+.search-results {
   justify-self: end;
   font-size: 1.8rem;
+}
+
+.search-results strong {
+  color: var(--color-background-500);
 }

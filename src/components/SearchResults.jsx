@@ -8,8 +8,8 @@ function SearchResults({ movies }) {
   };
 
   return (
-    <p className={styles["num-results"]}>
-      Found <strong>{movies.length}</strong> results
+    <p className={styles["search-results"]}>
+      Found <strong>[{movies.length}]</strong> results
     </p>
   );
 }
