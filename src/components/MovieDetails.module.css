@@ -102,3 +102,15 @@
   flex-direction: column;
   gap: 2.4rem;
 }
+
+@media (max-width: 435px) {
+  .details-overview {
+    padding: 1.4rem 2rem;
+  }
+  .details section {
+    padding: 2rem;
+  }
+  .rating-container {
+    padding: 2rem 1.4rem;
+  }
+}
