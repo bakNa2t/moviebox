@@ -1,9 +1,10 @@
 import { useState } from "react";
 
+import Button from "./Button";
+
 import PropTypes from "prop-types";
 
 import styles from "./BoxList.module.css";
-import Button from "./Button";
 
 function BoxList({ children }) {
   BoxList.propTypes = {
