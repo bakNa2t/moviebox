@@ -93,7 +93,7 @@ function MovieDetails({
               className={styles["btn-back"]}
               onClick={onCloseMovieDetails}
             >
-              &larr;
+              &#11176;
             </button>
             <img src={poster} alt={`${title} poster}`} />
             <div className={styles["details-overview"]}>
