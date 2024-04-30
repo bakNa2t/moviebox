@@ -4,7 +4,9 @@ function Logo() {
   return (
     <div className={styles.logo}>
       <span role="img">🎬</span>
-      <h1>MovieBox</h1>
+      <h1>
+        Movie<span>[Box]</span>
+      </h1>
     </div>
   );
 }

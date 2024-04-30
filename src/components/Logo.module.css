@@ -14,6 +14,11 @@
   color: #fff;
 }
 
+.logo h1 span {
+  font-size: inherit;
+  color: var(--color-background-900);
+}
+
 @media (max-width: 435px) {
   .logo h1 {
     display: none;
