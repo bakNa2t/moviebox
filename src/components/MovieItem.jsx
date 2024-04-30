@@ -1,3 +1,5 @@
+import Movie from "./Movie";
+
 import PropTypes from "prop-types";
 
 function MovieItem({ movie, onQyeryId }) {
@@ -6,18 +8,7 @@ function MovieItem({ movie, onQyeryId }) {
     onQyeryId: PropTypes.func.isRequired,
   };
 
-  return (
-    <li onClick={() => onQyeryId(movie.imdbID)}>
-      <img src={movie.Poster} alt={`${movie.Title} poster`} />
-      <h3>{movie.Title}</h3>
-      <div>
-        <p>
-          <span>📅</span>
-          <span>{movie.Year}</span>
-        </p>
-      </div>
-    </li>
-  );
+  return <Movie movie={movie} onQyeryId={onQyeryId} />;
 }
 
 export default MovieItem;
