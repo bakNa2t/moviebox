@@ -6,6 +6,7 @@
   padding: 0 3rem;
   background-color: var(--color-primary);
   border-radius: 1rem;
+  box-shadow: 0 0 0.5rem var(--color-background-100);
 }
 
 @media (max-width: 435px) {
