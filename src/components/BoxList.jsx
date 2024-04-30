@@ -16,7 +16,7 @@ function BoxList({ children }) {
   return (
     <div className={styles.box}>
       <Button onClick={() => setIsOpen((open) => !open)}>
-        {isOpen ? "–" : "+"}
+        {isOpen ? "⮝" : "⮟"}
       </Button>
       {/* <button
         className={styles["btn-toggle"]}
