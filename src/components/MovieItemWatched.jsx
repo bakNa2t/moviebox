@@ -11,15 +11,15 @@ function MovieItemWatched({ movie }) {
       <h3>{movie.title}</h3>
       <div>
         <p>
-          <span>⭐️</span>
+          <span>&#11088;</span>
           <span>{movie.imdbRating}</span>
         </p>
         <p>
-          <span>🌟</span>
+          <span>&#127775;</span>
           <span>{movie.userRating}</span>
         </p>
         <p>
-          <span>⏱</span>
+          <span>&#9202;</span>
           <span>{movie.runtime} min</span>
         </p>
       </div>

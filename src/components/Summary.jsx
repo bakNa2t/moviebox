@@ -23,15 +23,15 @@ function Summary({ watched }) {
           <span>{watched.length} movies</span>
         </p>
         <p>
-          <span>⭐️</span>
+          <span>&#11088;</span>
           <span>{avgImdbRating.toFixed(1)}</span>
         </p>
         <p>
-          <span>🌟</span>
+          <span>&#127775;</span>
           <span>{avgUserRating.toFixed(1)}</span>
         </p>
         <p>
-          <span>⏱</span>
+          <span>&#9202;</span>
           <span>{avgRuntime.toFixed(0)} min</span>
         </p>
       </div>
