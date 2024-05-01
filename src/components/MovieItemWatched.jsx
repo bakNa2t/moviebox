@@ -1,5 +1,7 @@
 import PropTypes from "prop-types";
 
+import styles from "./MovieItemWatched.module.css";
+
 function MovieItemWatched({ movie, onDeleteWatchedMovie }) {
   MovieItemWatched.propTypes = {
     movie: PropTypes.object.isRequired,
@@ -24,7 +26,7 @@ function MovieItemWatched({ movie, onDeleteWatchedMovie }) {
           <span>{movie.runtime} min</span>
         </p>
         <button
-          className={style["btn-delete"]}
+          className={styles["btn-delete"]}
           onClick={() => onDeleteWatchedMovie(movie.imdbID)}
         >
           &#10006;
