@@ -28,6 +28,10 @@ function MovieDetails({
 
   const isWathched = watched.map((movie) => movie.imdbID).includes(queryId);
 
+  const watchedUserRating = watched.find(
+    (movie) => movie.imdbID === queryId
+  )?.userRating;
+
   const {
     Title: title,
     Year: year,
@@ -118,7 +122,10 @@ function MovieDetails({
                   )}
                 </>
               ) : (
-                <p>This movie already has a rating</p>
+                <p>
+                  This movie already has a rating with &#11088;{" "}
+                  {watchedUserRating}
+                </p>
               )}
             </div>
             <p>
