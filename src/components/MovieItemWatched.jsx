@@ -1,8 +1,9 @@
 import PropTypes from "prop-types";
 
-function MovieItemWatched({ movie }) {
+function MovieItemWatched({ movie, onDeleteWatchedMovie }) {
   MovieItemWatched.propTypes = {
     movie: PropTypes.object.isRequired,
+    onDeleteWatchedMovie: PropTypes.func.isRequired,
   };
 
   return (
@@ -22,6 +23,12 @@ function MovieItemWatched({ movie }) {
           <span>&#9202;</span>
           <span>{movie.runtime} min</span>
         </p>
+        <button
+          className={style["btn-delete"]}
+          onClick={() => onDeleteWatchedMovie(movie.imdbID)}
+        >
+          &#10006;
+        </button>
       </div>
     </li>
   );
