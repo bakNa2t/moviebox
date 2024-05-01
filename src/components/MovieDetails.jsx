@@ -79,6 +79,15 @@ function MovieDetails({
     [queryId]
   );
 
+  useEffect(
+    function () {
+      if (!title) return;
+
+      document.title = `${title} | MovieBox`;
+    },
+    [title]
+  );
+
   return (
     <div className={styles.details}>
       {isLoading ? (
