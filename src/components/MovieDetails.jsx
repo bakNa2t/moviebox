@@ -26,14 +26,7 @@ function MovieDetails({
   const [isLoading, setIsLoading] = useState(false);
   const [userRating, setUserRating] = useState("");
 
-  const isWathched = watched
-    .map((movie) => {
-      movie.imdbID;
-      console.log(movie.imdbID);
-    })
-    .includes(queryId);
-  console.log(isWathched);
-  console.log(queryId);
+  const isWathched = watched.map((movie) => movie.imdbID).includes(queryId);
 
   const {
     Title: title,
@@ -125,7 +118,7 @@ function MovieDetails({
                   )}
                 </>
               ) : (
-                <p>This movie is not in your list</p>
+                <p>This movie already has a rating</p>
               )}
             </div>
             <p>
