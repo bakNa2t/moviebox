@@ -4,7 +4,8 @@
 }
 
 .search-results strong {
-  color: var(--color-background-500);
+  color: var(--color-background-900);
+  text-shadow: 2px 2px 3px var(--color-background-500);
 }
 
 @media (max-width: 435px) {

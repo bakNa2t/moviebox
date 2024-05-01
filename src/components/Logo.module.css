@@ -18,6 +18,7 @@
 .logo h1 span {
   font-size: inherit;
   color: var(--color-background-900);
+  text-shadow: 2px 2px 4px var(--color-background-500);
 }
 
 @media (max-width: 435px) {

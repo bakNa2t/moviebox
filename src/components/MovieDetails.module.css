@@ -19,7 +19,7 @@
 
 .details section p span {
   color: var(--color-background-100);
-  text-shadow: 1px 1px 2px var(--color-background-900);
+  text-shadow: 2px 2px 2px var(--color-background-900);
 }
 
 .details img {
@@ -101,6 +101,7 @@
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
+  box-shadow: 3px 3px 6px var(--color-background-900);
 }
 
 @media (max-width: 435px) {
