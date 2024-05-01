@@ -84,6 +84,8 @@ function MovieDetails({
       if (!title) return;
 
       document.title = `${title} | MovieBox`;
+
+      return () => (document.title = "MovieBox");
     },
     [title]
   );
