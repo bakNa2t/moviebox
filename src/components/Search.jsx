@@ -1,7 +1,8 @@
+import { useEffect, useRef } from "react";
+
 import PropTypes from "prop-types";
 
 import styles from "./Search.module.css";
-import { useEffect } from "react";
 
 function Search({ query, setQuery }) {
   Search.propTypes = {
@@ -9,9 +10,10 @@ function Search({ query, setQuery }) {
     setQuery: PropTypes.func.isRequired,
   };
 
+  const searchElem = useRef(null);
+
   useEffect(function () {
-    const elem = document.querySelector(`.${styles.search}`);
-    elem.focus();
+    searchElem.current.focus();
   }, []);
 
   return (
@@ -21,6 +23,7 @@ function Search({ query, setQuery }) {
       placeholder="Search movies..."
       value={query}
       onChange={(e) => setQuery(e.target.value)}
+      ref={searchElem}
     />
   );
 }
