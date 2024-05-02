@@ -101,7 +101,18 @@ function MovieDetails({
               className={styles["btn-back"]}
               onClick={onCloseMovieDetails}
             >
-              &#11176;
+              <svg
+                width="16px"
+                height="16px"
+                viewBox="0 0 16 16"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill="currentColor"
+                  d="M5 12l-5-4 5-4v2h11v4h-11v2z"
+                ></path>
+              </svg>
             </button>
             <img src={poster} alt={`${title} poster}`} />
             <div className={styles["details-overview"]}>
