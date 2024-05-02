@@ -90,6 +90,23 @@ function MovieDetails({
     [title]
   );
 
+  useEffect(
+    function () {
+      function callback(e) {
+        if (e.key === "Escape") {
+          onCloseMovieDetails();
+        }
+      }
+
+      document.addEventListener("keydown", callback);
+
+      return function () {
+        document.removeEventListener("keydown", callback);
+      };
+    },
+    [onCloseMovieDetails]
+  );
+
   return (
     <div className={styles.details}>
       {isLoading ? (
