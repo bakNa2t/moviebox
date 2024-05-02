@@ -12,9 +12,23 @@ function Search({ query, setQuery }) {
 
   const searchElem = useRef(null);
 
-  useEffect(function () {
-    searchElem.current.focus();
-  }, []);
+  useEffect(
+    function () {
+      function callback(e) {
+        if (document.activeElement === searchElem.current) return;
+
+        if (e.code === "Enter") {
+          searchElem.current.focus();
+          setQuery("");
+        }
+      }
+
+      document.addEventListener("keydown", callback);
+
+      return () => document.removeEventListener("keydown", callback);
+    },
+    [setQuery]
+  );
 
   return (
     <input
