@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import Rating from "./Rating";
 import Spinner from "./Spinner";
@@ -25,6 +25,8 @@ function MovieDetails({
   const [movieDetails, setMovieDetails] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [userRating, setUserRating] = useState("");
+
+  const countRef = useRef(0);
 
   const isWathched = watched.map((movie) => movie.imdbID).includes(queryId);
 
@@ -54,11 +56,21 @@ function MovieDetails({
       imdbRating: Number(imdbRating),
       runtime: Number(runtime.split(" ").at(0)),
       userRating,
+      countRatingSet: countRef.current,
     };
 
     onAddWatchedMovie(newMovie);
     onCloseMovieDetails();
   }
+
+  useEffect(
+    function () {
+      if (userRating) {
+        countRef.current += 1;
+      }
+    },
+    [userRating]
+  );
 
   useEffect(
     function () {
