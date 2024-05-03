@@ -112,8 +112,11 @@ export default function App() {
       <AppLayout>
         <BoxList>
           {isLoading && <Spinner />}
-          {!isLoading && !error && (
-            <MovieList movies={movies} onQyeryId={handleQyeryId} />
+          {movies.length > 0 ? (
+            !isLoading &&
+            !error && <MovieList movies={movies} onQyeryId={handleQyeryId} />
+          ) : (
+            <p className="text">No results to display, use the search bar</p>
           )}
           {error && <ErrorMessage message={error} />}
         </BoxList>

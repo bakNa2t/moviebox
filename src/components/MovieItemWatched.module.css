@@ -17,7 +17,7 @@
 .btn-delete:hover {
   color: var(--color-text);
   background-color: var(--color-red-dark);
-  box-shadow: 0 0 3px var(--color-background-900);
+  box-shadow: 0 0 3px 2px var(--color-background-900);
 }
 
 @media (max-width: 435px) {
