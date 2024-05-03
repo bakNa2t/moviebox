@@ -8,6 +8,7 @@ import PropTypes from "prop-types";
 import API_KEY from "../env/auth-key";
 
 import styles from "./MovieDetails.module.css";
+import { useEventKey } from "../hooks/useEventKey";
 
 function MovieDetails({
   queryId,
@@ -63,6 +64,8 @@ function MovieDetails({
     onCloseMovieDetails();
   }
 
+  useEventKey("Escape", onCloseMovieDetails);
+
   useEffect(
     function () {
       if (userRating) {
@@ -100,23 +103,6 @@ function MovieDetails({
       return () => (document.title = "MovieBox");
     },
     [title]
-  );
-
-  useEffect(
-    function () {
-      function callback(e) {
-        if (e.key === "Escape") {
-          onCloseMovieDetails();
-        }
-      }
-
-      document.addEventListener("keydown", callback);
-
-      return function () {
-        document.removeEventListener("keydown", callback);
-      };
-    },
-    [onCloseMovieDetails]
   );
 
   return (
