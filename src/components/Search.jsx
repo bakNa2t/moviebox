@@ -1,8 +1,9 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
 import PropTypes from "prop-types";
 
 import styles from "./Search.module.css";
+import { useEventKey } from "../hooks/useEventKey";
 
 function Search({ query, setQuery }) {
   Search.propTypes = {
@@ -12,23 +13,29 @@ function Search({ query, setQuery }) {
 
   const searchElem = useRef(null);
 
-  useEffect(
-    function () {
-      function callback(e) {
-        if (document.activeElement === searchElem.current) return;
+  useEventKey("Enter", function () {
+    if (document.activeElement === searchElem.current) return;
+    searchElem.current.focus();
+    setQuery("");
+  });
 
-        if (e.code === "Enter") {
-          searchElem.current.focus();
-          setQuery("");
-        }
-      }
+  // useEffect(
+  //   function () {
+  //     function callback(e) {
+  //       if (document.activeElement === searchElem.current) return;
 
-      document.addEventListener("keydown", callback);
+  //       if (e.code === "Enter") {
+  //         searchElem.current.focus();
+  //         setQuery("");
+  //       }
+  //     }
 
-      return () => document.removeEventListener("keydown", callback);
-    },
-    [setQuery]
-  );
+  //     document.addEventListener("keydown", callback);
+
+  //     return () => document.removeEventListener("keydown", callback);
+  //   },
+  //   [setQuery]
+  // );
 
   return (
     <input
