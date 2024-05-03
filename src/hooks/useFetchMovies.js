@@ -2,13 +2,15 @@ import { useEffect, useState } from "react";
 
 import API_KEY from "../env/auth-key";
 
-export function useFetchMovies(query) {
+export function useFetchMovies(query, callback) {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
 
   useEffect(
     function () {
+      callback?.();
+
       const controller = new AbortController();
 
       async function fetchMovies() {
@@ -46,8 +48,6 @@ export function useFetchMovies(query) {
         setError("");
         return;
       }
-
-      //   handleCloseMovieDetails();
 
       fetchMovies();
 

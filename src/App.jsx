@@ -16,7 +16,6 @@ import MovieDetails from "./components/MovieDetails";
 // import API_KEY from "./env/auth-key";
 
 export default function App() {
-  // const [movies, setMovies] = useState([]);
   const [watched, setWatched] = useState(function () {
     const storedItems = localStorage.getItem("watched");
 
@@ -24,9 +23,10 @@ export default function App() {
   });
   const [query, setQuery] = useState("");
   const [queryId, setQueryId] = useState(null);
-  const { movies, isLoading, error } = useFetchMovies(query);
-  // const [isLoading, setIsLoading] = useState(false);
-  // const [error, setError] = useState("");
+  const { movies, isLoading, error } = useFetchMovies(
+    query,
+    handleCloseMovieDetails
+  );
 
   function handleQyeryId(id) {
     setQueryId((queryId) => (queryId === id ? null : id));
@@ -52,57 +52,6 @@ export default function App() {
     },
     [watched]
   );
-
-  // useEffect(
-  //   function () {
-  //     const controller = new AbortController();
-
-  //     async function fetchMovies() {
-  //       try {
-  //         setIsLoading(true);
-  //         setError("");
-
-  //         const res = await fetch(
-  //           `https://www.omdbapi.com/?apikey=${API_KEY}&s=${query}`,
-  //           {
-  //             signal: controller.signal,
-  //           }
-  //         );
-
-  //         if (!res.ok) throw new Error("Failed to fetch movies");
-
-  //         const data = await res.json();
-
-  //         if (data.Response === "False") throw new Error("No movies found");
-
-  //         setMovies(data.Search);
-  //         setError("");
-  //       } catch (err) {
-  //         console.log(err.message);
-  //         if (err.name !== "AbortError") {
-  //           setError(err.message);
-  //         }
-  //       } finally {
-  //         setIsLoading(false);
-  //       }
-  //     }
-
-  //     if (query.length < 3) {
-  //       setMovies([]);
-  //       setError("");
-  //       return;
-  //     }
-
-  //     handleCloseMovieDetails();
-
-  //     fetchMovies();
-
-  //     return function () {
-  //       controller.abort();
-  //     };
-  //   },
-  //   [query]
-  // );
 
   return (
     <>
