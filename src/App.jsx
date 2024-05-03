@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useFetchMovies } from "./hooks/useFetchMovies";
 
 import AppLayout from "./components/AppLayout";
 import BoxList from "./components/BoxList";
@@ -12,20 +13,20 @@ import Spinner from "./components/Spinner";
 import ErrorMessage from "./components/ErrorMessage";
 import MovieDetails from "./components/MovieDetails";
 
-import API_KEY from "./env/auth-key";
+// import API_KEY from "./env/auth-key";
 
 export default function App() {
-  const [movies, setMovies] = useState([]);
-  // const [watched, setWatched] = useState([]);
+  // const [movies, setMovies] = useState([]);
   const [watched, setWatched] = useState(function () {
     const storedItems = localStorage.getItem("watched");
 
     return storedItems ? JSON.parse(storedItems) : [];
   });
   const [query, setQuery] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState("");
   const [queryId, setQueryId] = useState(null);
+  const { movies, isLoading, error } = useFetchMovies(query);
+  // const [isLoading, setIsLoading] = useState(false);
+  // const [error, setError] = useState("");
 
   function handleQyeryId(id) {
     setQueryId((queryId) => (queryId === id ? null : id));
@@ -52,56 +53,56 @@ export default function App() {
     [watched]
   );
 
-  useEffect(
-    function () {
-      const controller = new AbortController();
+  // useEffect(
+  //   function () {
+  //     const controller = new AbortController();
 
-      async function fetchMovies() {
-        try {
-          setIsLoading(true);
-          setError("");
+  //     async function fetchMovies() {
+  //       try {
+  //         setIsLoading(true);
+  //         setError("");
 
-          const res = await fetch(
-            `https://www.omdbapi.com/?apikey=${API_KEY}&s=${query}`,
-            {
-              signal: controller.signal,
-            }
-          );
+  //         const res = await fetch(
+  //           `https://www.omdbapi.com/?apikey=${API_KEY}&s=${query}`,
+  //           {
+  //             signal: controller.signal,
+  //           }
+  //         );
 
-          if (!res.ok) throw new Error("Failed to fetch movies");
+  //         if (!res.ok) throw new Error("Failed to fetch movies");
 
-          const data = await res.json();
+  //         const data = await res.json();
 
-          if (data.Response === "False") throw new Error("No movies found");
+  //         if (data.Response === "False") throw new Error("No movies found");
 
-          setMovies(data.Search);
-          setError("");
-        } catch (err) {
-          console.log(err.message);
-          if (err.name !== "AbortError") {
-            setError(err.message);
-          }
-        } finally {
-          setIsLoading(false);
-        }
-      }
+  //         setMovies(data.Search);
+  //         setError("");
+  //       } catch (err) {
+  //         console.log(err.message);
+  //         if (err.name !== "AbortError") {
+  //           setError(err.message);
+  //         }
+  //       } finally {
+  //         setIsLoading(false);
+  //       }
+  //     }
 
-      if (query.length < 3) {
-        setMovies([]);
-        setError("");
-        return;
-      }
+  //     if (query.length < 3) {
+  //       setMovies([]);
+  //       setError("");
+  //       return;
+  //     }
 
-      handleCloseMovieDetails();
+  //     handleCloseMovieDetails();
 
-      fetchMovies();
+  //     fetchMovies();
 
-      return function () {
-        controller.abort();
-      };
-    },
-    [query]
-  );
+  //     return function () {
+  //       controller.abort();
+  //     };
+  //   },
+  //   [query]
+  // );
 
   return (
     <>
