@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useFetchMovies } from "./hooks/useFetchMovies";
+import { useLocalStorage } from "./hooks/useLocalStorage";
 
 import AppLayout from "./components/AppLayout";
 import BoxList from "./components/BoxList";
@@ -13,16 +14,10 @@ import Spinner from "./components/Spinner";
 import ErrorMessage from "./components/ErrorMessage";
 import MovieDetails from "./components/MovieDetails";
 
-// import API_KEY from "./env/auth-key";
-
 export default function App() {
-  const [watched, setWatched] = useState(function () {
-    const storedItems = localStorage.getItem("watched");
-
-    return storedItems ? JSON.parse(storedItems) : [];
-  });
   const [query, setQuery] = useState("");
   const [queryId, setQueryId] = useState(null);
+  const [watched, setWatched] = useLocalStorage([], "watched");
   const { movies, isLoading, error } = useFetchMovies(
     query,
     handleCloseMovieDetails
@@ -45,13 +40,6 @@ export default function App() {
       setWatched((watched) => watched.filter((movie) => movie.imdbID !== id));
     }
   }
-
-  useEffect(
-    function () {
-      localStorage.setItem("watched", JSON.stringify(watched));
-    },
-    [watched]
-  );
 
   return (
     <>
