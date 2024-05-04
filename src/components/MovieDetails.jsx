@@ -1,14 +1,14 @@
 import { useEffect, useRef, useState } from "react";
+import { useEventKey } from "../hooks/useEventKey";
 
 import Rating from "./Rating";
 import Spinner from "./Spinner";
 
 import PropTypes from "prop-types";
 
-import API_KEY from "../env/auth-key";
-
 import styles from "./MovieDetails.module.css";
-import { useEventKey } from "../hooks/useEventKey";
+
+import API_KEY from "../env/auth-key";
 
 function MovieDetails({
   queryId,
@@ -65,6 +65,7 @@ function MovieDetails({
   }
 
   useEventKey("Escape", onCloseMovieDetails);
+  useEventKey("Backspace", onCloseMovieDetails);
 
   useEffect(
     function () {
