@@ -23,6 +23,11 @@
   gap: 0.8rem;
 }
 
+.hash {
+  font-size: 16px;
+  color: var(--color-background-900);
+}
+
 @media (max-width: 435px) {
   .summary {
     padding: 2.2rem 2.5rem 1.8rem 2.5rem;

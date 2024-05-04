@@ -19,7 +19,7 @@ function Summary({ watched }) {
       <h2>Movies you watched</h2>
       <div>
         <p>
-          <span>#️⃣</span>
+          <span className={styles.hash}>#</span>
           <span>{watched.length} movies</span>
         </p>
         <p>
