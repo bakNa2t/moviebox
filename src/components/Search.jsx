@@ -13,17 +13,14 @@ function Search({ query, setQuery }) {
 
   const searchElem = useRef(null);
 
-  useEventKey("Enter" || "NumpadEnter", function () {
+  function setEvent() {
     if (document.activeElement === searchElem.current) return;
     searchElem.current.focus();
     setQuery("");
-  });
+  }
 
-  useEventKey("NumpadEnter", function () {
-    if (document.activeElement === searchElem.current) return;
-    searchElem.current.focus();
-    setQuery("");
-  });
+  useEventKey("Enter", setEvent);
+  useEventKey("NumpadEnter", setEvent);
 
   return (
     <input
