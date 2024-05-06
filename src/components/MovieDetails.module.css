@@ -48,6 +48,10 @@
   gap: 0.8rem;
 }
 
+.details-overview p span {
+  text-shadow: 2px 2px 2px var(--color-background-900);
+}
+
 .btn-back {
   position: absolute;
   top: 0.6rem;
