@@ -35,13 +35,13 @@ npm run dev
 
 The development server will be running on http://localhost:5173. You can open this URL in your web browser to view the worldwise app.
 
-click here to visit => [_**MovieBox ReactApp**_](https://moviebox.vercel.app/)
+click here to visit => [_**MovieBox ReactApp**_](https://moviebox-ok.vercel.app/)
 
 ---
 
 <div align="center">
     <p style="width: 500px;">
-        <a href="https://moviebox.vercel.app/" target="_blank" >
+        <a href="https://moviebox-ok.vercel.app/" target="_blank" >
             <img alt="MovieBox Webapp" src ="./public/mb-readme.png" width="600">
         </a>
     </p>
