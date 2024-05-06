@@ -1,8 +1,48 @@
-# React + Vite
+# MovieBox App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## A simple react app that uses the core principles of the react library and interacts with [_omdbapi_](https://omdbapi.com) database.
 
-Currently, two official plugins are available:
+### Getting Started
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+To get started with wideglobe, you will need to have Node.js and Vite installed on your machine.
+
+To install Node.js, visit the Node.js website: [node](https://nodejs.org)
+
+To install Vite, run the following command in your terminal:
+
+```
+npm install -g vite
+```
+
+Once you have Node.js and Vite installed, you can clone the wideglobe repository to your local machine:
+
+```
+git clone https://github.com/bakna2t/moviebox.git
+```
+
+Navigate to the wideglobe directory and install the dependencies:
+
+```
+cd moviebox
+npm install
+```
+
+To start the development server, run the following command:
+
+```
+npm run dev
+```
+
+The development server will be running on http://localhost:5173. You can open this URL in your web browser to view the worldwise app.
+
+click here to visit => [_**MovieBox ReactApp**_](https://moviebox.vercel.app/)
+
+---
+
+<div align="center">
+    <p style="width: 500px;">
+        <a href="https://moviebox.vercel.app/" target="_blank" >
+            <img alt="MovieBox Webapp" src ="./public/mb-readme.png" width="600">
+        </a>
+    </p>
+</div>
