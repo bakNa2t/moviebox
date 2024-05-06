@@ -26,6 +26,11 @@
 .hash {
   font-size: 16px;
   color: var(--color-background-900);
+  text-shadow: 1px 1px 3px var(--color-background-900);
+}
+
+.span-shadow {
+  text-shadow: 2px 2px 3px var(--color-background-900);
 }
 
 @media (max-width: 435px) {
