@@ -130,7 +130,10 @@ function MovieDetails({
                 ></path>
               </svg>
             </button>
-            <img src={poster} alt={`${title} poster}`} />
+            <img
+              src={poster !== "N/A" ? poster : "../../public/no-img.jpg"}
+              alt={`${title} poster}`}
+            />
             <div className={styles["details-overview"]}>
               <h2>{title}</h2>
               <p>
