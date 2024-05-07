@@ -41,19 +41,6 @@ body {
   padding: 2.5rem 4rem;
 }
 
-.text {
-  text-align: center;
-  width: 80%;
-  transform: translate(-50%, -50%);
-  left: 50%;
-  top: 50%;
-  position: absolute;
-  font-size: 2.2rem;
-  font-weight: 600;
-  color: var(--color-primary);
-  text-shadow: 2px 2px 2px var(--color-background-900);
-}
-
 ::-webkit-scrollbar {
   width: 1rem;
 }
