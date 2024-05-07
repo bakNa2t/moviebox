@@ -54,9 +54,12 @@ export default function App() {
             <MovieList movies={movies} onQyeryId={handleQyeryId} />
           )}
           {movies.length === 0 && !isLoading && !error && (
-            <p className="text">No results to display, use the search bar</p>
+            <ErrorMessage
+              message={"No results to display, use the search bar"}
+              emoji={"🔎"}
+            />
           )}
-          {error && <ErrorMessage message={error} />}
+          {error && <ErrorMessage message={error} emoji={"🚨"} />}
         </BoxList>
 
         <BoxList>
