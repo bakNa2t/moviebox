@@ -93,7 +93,10 @@
 }
 
 .btn-add:hover {
+  color: var(--color-background-900);
+  text-shadow: 2px 2px 3px var(--color-background-500);
   background-color: var(--color-primary-light);
+  box-shadow: 2px 2px 3px 1px var(--color-background-500);
 }
 
 .rating-container {
