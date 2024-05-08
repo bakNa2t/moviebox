@@ -42,7 +42,9 @@ export default function App() {
   }
 
   function handleClearAllMovies() {
-    setWatched([]);
+    if (confirm("Are you sure you want to delete all movies?")) {
+      setWatched([]);
+    }
   }
 
   return (
