@@ -22,9 +22,11 @@ function MovieListWatched({ watched, onDeleteWatchedMovie, onClearAllMovies }) {
           />
         ))}
       </ul>
-      <button className={styles["btn-clear"]} onClick={onClearAllMovies}>
-        Clear Movies
-      </button>
+      {watched.length > 0 && (
+        <button className={styles["btn-clear"]} onClick={onClearAllMovies}>
+          Clear Movies
+        </button>
+      )}
     </>
   );
 }
