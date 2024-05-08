@@ -4,10 +4,11 @@ import styles from "./MovieList.module.css";
 
 import PropTypes from "prop-types";
 
-function MovieListWatched({ watched, onDeleteWatchedMovie }) {
+function MovieListWatched({ watched, onDeleteWatchedMovie, onClearAllMovies }) {
   MovieListWatched.propTypes = {
     watched: PropTypes.array.isRequired,
     onDeleteWatchedMovie: PropTypes.func.isRequired,
+    onClearAllMovies: PropTypes.func.isRequired,
   };
 
   return (
@@ -21,7 +22,9 @@ function MovieListWatched({ watched, onDeleteWatchedMovie }) {
           />
         ))}
       </ul>
-      <button>Clear All Movies</button>
+      <button className={styles["btn-clear"]} onClick={onClearAllMovies}>
+        Clear Movies
+      </button>
     </>
   );
 }
