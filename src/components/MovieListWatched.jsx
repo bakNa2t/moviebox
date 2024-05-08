@@ -11,15 +11,18 @@ function MovieListWatched({ watched, onDeleteWatchedMovie }) {
   };
 
   return (
-    <ul className={styles.list}>
-      {watched.map((movie) => (
-        <MovieItemWatched
-          movie={movie}
-          key={movie.imdbID}
-          onDeleteWatchedMovie={onDeleteWatchedMovie}
-        />
-      ))}
-    </ul>
+    <>
+      <ul className={styles.list}>
+        {watched.map((movie) => (
+          <MovieItemWatched
+            movie={movie}
+            key={movie.imdbID}
+            onDeleteWatchedMovie={onDeleteWatchedMovie}
+          />
+        ))}
+      </ul>
+      <button>Clear All Movies</button>
+    </>
   );
 }
 

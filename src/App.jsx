@@ -41,6 +41,10 @@ export default function App() {
     }
   }
 
+  function handleClearAllMovies() {
+    setWatched([]);
+  }
+
   return (
     <>
       <NavBar>
@@ -76,6 +80,7 @@ export default function App() {
               <MovieListWatched
                 watched={watched}
                 onDeleteWatchedMovie={handleDeleteWatchedMovie}
+                onClearAllMovies={handleClearAllMovies}
               />
             </>
           )}
