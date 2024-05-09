@@ -6,25 +6,16 @@
 }
 
 .spinner {
-  width: 6rem;
-  height: 6rem;
-  border-radius: 50%;
-  background: conic-gradient(#0000 10%, var(--color-primary-light));
-  mask: radial-gradient(
-    farthest-side,
-    #0000 calc(100% - 8px),
-    var(--color-background-900) 0
-  );
-  -webkit-mask: radial-gradient(
-    farthest-side,
-    #0000 calc(100% - 8px),
-    var(--color-background-900) 0
-  );
-  animation: rotate 1.5s infinite linear;
+  width: 50px;
+  aspect-ratio: 1;
+  --_c: radial-gradient(farthest-side, var(--color-primary) 92%, #0000);
+  background: var(--_c) top, var(--_c) left, var(--_c) right, var(--_c) bottom;
+  background-size: 12px 12px;
+  background-repeat: no-repeat;
+  animation: spinner 1s infinite;
 }
-
-@keyframes rotate {
+@keyframes spinner {
   to {
-    transform: rotate(1turn);
+    transform: rotate(0.5turn);
   }
 }
