@@ -1,0 +1,28 @@
+.footer {
+  margin-top: auto;
+}
+
+.copyright {
+  font-size: 1.2rem;
+  color: var(--color-primary);
+}
+
+.copyright a {
+  text-decoration: none;
+  display: inline-block;
+  color: var(--color-background-100);
+  text-shadow: 0 0 5px var(--color-background-500);
+  transition: all 0.4s ease-in-out;
+}
+
+.copyright a:hover {
+  transform: translateY(-0.2rem);
+  color: var(--color-background-900);
+  text-shadow: 0 0 1rem var(--color-background-100);
+  transition: all 0.4s ease-in-out;
+}
+
+.copyright strong {
+  color: var(--color-primary);
+  text-shadow: 0 0 0.25rem var(--color-background-500);
+}
