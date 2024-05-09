@@ -29,3 +29,9 @@
   color: var(--color-primary-light);
   text-shadow: 2px 2px 2px var(--color-background-100);
 }
+
+@media (max-width: 435px) {
+  .footer {
+    width: 265px;
+  }
+}
