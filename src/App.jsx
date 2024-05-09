@@ -13,6 +13,7 @@ import MovieListWatched from "./components/MovieListWatched";
 import Spinner from "./components/Spinner";
 import ErrorMessage from "./components/ErrorMessage";
 import MovieDetails from "./components/MovieDetails";
+import Footer from "./components/Footer";
 
 export default function App() {
   const [query, setQuery] = useState("");
@@ -88,6 +89,7 @@ export default function App() {
           )}
         </BoxList>
       </AppLayout>
+      <Footer />
     </>
   );
 }
