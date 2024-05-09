@@ -1,31 +1,31 @@
 .footer {
   position: absolute;
-  bottom: 1rem;
+  bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
 }
 
 .copyright {
   font-size: 1.2rem;
-  color: var(--color-primary);
+  color: var(--color-background-100);
 }
 
 .copyright a {
   text-decoration: none;
   display: inline-block;
   color: var(--color-background-100);
-  text-shadow: 0 0 5px var(--color-background-500);
+  text-shadow: 1px 1px 2px var(--color-primary-light);
   transition: all 0.4s ease-in-out;
 }
 
 .copyright a:hover {
   transform: translateY(-0.2rem);
-  color: var(--color-background-900);
-  text-shadow: 0 0 1rem var(--color-background-100);
+  color: var(--color-primary);
+  text-shadow: 1px 1px 2px var(--color-text);
   transition: all 0.4s ease-in-out;
 }
 
 .copyright strong {
-  color: var(--color-primary);
-  text-shadow: 0 0 0.25rem var(--color-background-500);
+  color: var(--color-primary-light);
+  text-shadow: 2px 2px 2px var(--color-background-100);
 }
