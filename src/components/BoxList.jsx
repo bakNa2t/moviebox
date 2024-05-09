@@ -15,7 +15,10 @@ function BoxList({ children }) {
 
   return (
     <div className={styles.box}>
-      <Button onClick={() => setIsOpen((open) => !open)}>
+      <Button
+        className={styles["btn-toggle"]}
+        onClick={() => setIsOpen((open) => !open)}
+      >
         {isOpen ? (
           <svg
             width="16px"

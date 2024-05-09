@@ -1,15 +1,13 @@
 import PropTypes from "prop-types";
 
-import styles from "./Button.module.css";
-
-function Button({ children, classname, onClick }) {
+function Button({ children, className, onClick }) {
   Button.propTypes = {
     children: PropTypes.node.isRequired,
-    classname: PropTypes.string.isRequired,
+    className: PropTypes.string.isRequired,
     onClick: PropTypes.func.isRequired,
   };
   return (
-    <button className={styles[classname]} onClick={onClick}>
+    <button className={className} onClick={onClick}>
       {children}
     </button>
   );
