@@ -9,6 +9,7 @@ import PropTypes from "prop-types";
 import styles from "./MovieDetails.module.css";
 
 import API_KEY from "../env/auth-key";
+import Button from "./Button";
 
 function MovieDetails({
   queryId,
@@ -113,7 +114,7 @@ function MovieDetails({
       ) : (
         <>
           <header>
-            <button
+            <Button
               className={styles["btn-back"]}
               onClick={onCloseMovieDetails}
             >
@@ -129,7 +130,7 @@ function MovieDetails({
                   d="M5 12l-5-4 5-4v2h11v4h-11v2z"
                 ></path>
               </svg>
-            </button>
+            </Button>
             <img
               src={poster !== "N/A" ? poster : "../../public/no-img.jpg"}
               alt={`${title} poster}`}
