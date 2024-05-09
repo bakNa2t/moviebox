@@ -1,3 +1,4 @@
+import Button from "./Button";
 import MovieItemWatched from "./MovieItemWatched";
 
 import styles from "./MovieList.module.css";
@@ -23,9 +24,9 @@ function MovieListWatched({ watched, onDeleteWatchedMovie, onClearAllMovies }) {
         ))}
       </ul>
       {watched.length > 0 && (
-        <button className={styles["btn-clear"]} onClick={onClearAllMovies}>
+        <Button className={styles["btn-clear"]} onClick={onClearAllMovies}>
           Clear Movies
-        </button>
+        </Button>
       )}
     </>
   );
