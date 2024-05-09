@@ -32,6 +32,7 @@
 
 @media (max-width: 435px) {
   .footer {
-    width: 265px;
+    display: none;
+    /* width: 265px; */
   }
 }
