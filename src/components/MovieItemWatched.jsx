@@ -1,3 +1,5 @@
+import Button from "./Button";
+
 import PropTypes from "prop-types";
 
 import styles from "./MovieItemWatched.module.css";
@@ -25,12 +27,12 @@ function MovieItemWatched({ movie, onDeleteWatchedMovie }) {
           <span>&#9202;</span>
           <span>{movie.runtime} min</span>
         </p>
-        <button
+        <Button
           className={styles["btn-delete"]}
           onClick={() => onDeleteWatchedMovie(movie.imdbID)}
         >
           &#10006;
-        </button>
+        </Button>
       </div>
     </li>
   );
