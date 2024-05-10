@@ -23,6 +23,7 @@
   font-weight: bold;
   cursor: pointer;
   z-index: 999;
+  opacity: 0.4;
   transition: all 0.3s ease-in-out;
 
   display: flex;
@@ -31,6 +32,7 @@
 }
 
 .btn-toggle:hover {
+  opacity: 1;
   background-color: var(--color-primary);
   transition: all 0.3s ease-in-out;
 }

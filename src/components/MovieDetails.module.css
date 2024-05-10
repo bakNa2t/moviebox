@@ -72,9 +72,11 @@
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease-in-out;
+  opacity: 0.4;
 }
 
 .btn-back:hover {
+  opacity: 1;
   background-color: var(--color-primary);
   box-shadow: 0 0 6px var(--color-primary-light);
   transition: all 0.3s ease-in-out;
