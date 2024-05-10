@@ -16,7 +16,9 @@ function Summary({ watched }) {
 
   return (
     <div className={styles.summary}>
-      <h2>Movies you watched</h2>
+      <h2>
+        List <span>[watched]</span> movies
+      </h2>
       <div>
         <p>
           <span className={styles.hash}>#</span>

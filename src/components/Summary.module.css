@@ -9,6 +9,11 @@
   margin-bottom: 1rem;
 }
 
+.summary h2 span {
+  color: var(--color-background-900);
+  text-shadow: 2px 2px 2px var(--color-background-500);
+}
+
 .summary div {
   display: flex;
   align-items: center;
