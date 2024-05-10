@@ -85,6 +85,14 @@ export default function App() {
                 onDeleteWatchedMovie={handleDeleteWatchedMovie}
                 onClearAllMovies={handleClearAllMovies}
               />
+              {watched.length === 0 && (
+                <ErrorMessage
+                  message={
+                    "Here will be your list of watched movies, but nothing added yet"
+                  }
+                  emoji={"👀"}
+                />
+              )}
             </>
           )}
         </BoxList>
