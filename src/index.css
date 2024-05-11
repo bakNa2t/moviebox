@@ -12,17 +12,6 @@
   --color-red: #fa5252;
   --color-red-dark: #e03131;
 
-  /* Ligth mode */
-  /*.theme-light { --color-primary: #104736;
-  --color-primary-light: #1b7a5d;
-  --color-text: #ceecd8;
-  --color-text-dark: #51675c;
-  --color-background-100: #5b9569;
-  --color-background-500: #5db36d;
-  --color-background-900: #b8e0d4;
-  --color-red: #fa5252;
-  --color-red-dark: #e03131;} */
-
   /* --color-primary: #6741d9;
   --color-primary-light: #7950f2;
   --color-text: #dee2e6;
@@ -32,6 +21,19 @@
   --color-background-900: #212529;
   --color-red: #fa5252;
   --color-red-dark: #e03131; */
+}
+
+/* Ligth mode */
+.theme-light {
+  --color-primary: #104736;
+  --color-primary-light: #1b7a5d;
+  --color-text: #ceecd8;
+  --color-text-dark: #51675c;
+  --color-background-100: #5b9569;
+  --color-background-500: #5db36d;
+  --color-background-900: #b8e0d4;
+  --color-red: #fa5252;
+  --color-red-dark: #e03131;
 }
 
 * {
@@ -51,6 +53,28 @@ body {
   color: var(--color-text);
   background-color: var(--color-background-900);
   padding: 2.5rem 4rem;
+}
+
+.btn-mode {
+  position: absolute;
+  top: 0.8rem;
+  right: 0.8rem;
+  height: 2.5rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--color-background-900);
+  color: var(--color-text);
+  font-size: 1.4rem;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 999;
+  opacity: 0.4;
+  transition: all 0.3s ease-in-out;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 ::-webkit-scrollbar {
