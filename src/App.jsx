@@ -24,6 +24,7 @@ export default function App() {
     query,
     handleCloseMovieDetails
   );
+  const [isLightMode, setIsLightMode] = useState(true);
 
   function handleQyeryId(id) {
     setQueryId((queryId) => (queryId === id ? null : id));
@@ -47,6 +48,10 @@ export default function App() {
     if (confirm("Are you sure you want to delete all movies?")) {
       setWatched([]);
     }
+  }
+
+  function handleToggleThemeMode() {
+    setIsLightMode((isLightMode) => !isLightMode);
   }
 
   return (
