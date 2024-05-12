@@ -108,4 +108,9 @@ body {
   body {
     padding: 2.5rem 2rem;
   }
+  .btn-mode {
+    /* height: 2rem; */
+    right: 0;
+    top: 0.4rem;
+  }
 }
