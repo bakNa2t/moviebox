@@ -24,7 +24,7 @@ export default function App() {
     query,
     handleCloseMovieDetails
   );
-  // const [isLightMode, setIsLightMode] = useState(true);
+  const [isLightMode, setIsLightMode] = useState(true);
 
   function handleQyeryId(id) {
     setQueryId((queryId) => (queryId === id ? null : id));
@@ -50,9 +50,12 @@ export default function App() {
     }
   }
 
-  // function handleToggleThemeMode() {
-  //   setIsLightMode((isLightMode) => !isLightMode);
-  // }
+  function handleToggleThemeMode() {
+    isLightMode
+      ? document.body.classList.add("theme-light")
+      : document.body.classList.remove("theme-light");
+    setIsLightMode((isLightMode) => !isLightMode);
+  }
 
   return (
     <>
@@ -104,7 +107,7 @@ export default function App() {
         </BoxList>
       </AppLayout>
       <Footer />
-      <Button className={"btn-mode"} /*onClick={handleToggleThemeMode}*/>
+      <Button className={"btn-mode"} onClick={handleToggleThemeMode}>
         <svg
           fill="var(--color-primary)"
           width="22px"
