@@ -25,6 +25,7 @@ export default function App() {
     handleCloseMovieDetails
   );
   const [isLightMode, setIsLightMode] = useState(true);
+  // const [themeMode, setThemeMode] = useLocalStorage("", "themeMode");
 
   function handleQyeryId(id) {
     setQueryId((queryId) => (queryId === id ? null : id));
@@ -61,11 +62,12 @@ export default function App() {
     <>
       <NavBar>
         <Search query={query} setQuery={setQuery} />
-        <SearchResults movies={movies} />
+        {/* <SearchResults movies={movies} /> */}
       </NavBar>
       <AppLayout>
         <BoxList>
           {isLoading && <Spinner />}
+          <SearchResults movies={movies} />
           {movies.length > 0 && !isLoading && !error && (
             <MovieList movies={movies} onQyeryId={handleQyeryId} />
           )}
