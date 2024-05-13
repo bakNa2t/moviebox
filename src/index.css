@@ -27,8 +27,9 @@
 .theme-light {
   --color-primary: #104736;
   --color-primary-light: #1b7a5d;
-  --color-text: #ceecd8;
-  --color-text-dark: #51675c;
+  --color-text: #94c3ac;
+  /* --color-text: #51675c; */
+  --color-text-dark: #ceecd8;
   --color-background-100: #5b9569;
   --color-background-500: #5db36d;
   --color-background-900: #b8e0d4;
@@ -109,7 +110,6 @@ body {
     padding: 2.5rem 2rem;
   }
   .btn-mode {
-    /* height: 2rem; */
     right: 0;
     top: 0.4rem;
   }
