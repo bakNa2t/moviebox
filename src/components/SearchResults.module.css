@@ -13,11 +13,11 @@
   text-shadow: 2px 2px 3px var(--color-background-500);
 }
 
-@media (max-width: 435px) {
+/* @media (max-width: 435px) {
   .search-results {
     font-size: 1rem;
   }
   .search-results strong {
     font-size: 1.2rem;
   }
-}
+} */

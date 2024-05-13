@@ -10,3 +10,11 @@
   color: var(--color-primary);
   text-shadow: 2px 2px 2px var(--color-background-900);
 }
+
+@media (max-width: 435px) {
+  .error {
+    font-size: 1.5rem;
+    transform: translate(-50%, -60%);
+    top: 60%;
+  }
+}
