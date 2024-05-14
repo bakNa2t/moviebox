@@ -1,3 +1,5 @@
+import { FaRegCalendar } from "react-icons/fa";
+
 import PropTypes from "prop-types";
 
 function Movie({ movie, onQyeryId }) {
@@ -15,7 +17,9 @@ function Movie({ movie, onQyeryId }) {
       <h3>{movie.Title}</h3>
       <div>
         <p>
-          <span>📅</span>
+          <span>
+            <FaRegCalendar />
+          </span>
           <span>{movie.Year}</span>
         </p>
       </div>

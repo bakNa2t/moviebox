@@ -32,7 +32,13 @@
 .search-icon {
   position: absolute;
   cursor: pointer;
-  right: 0;
+  right: 1rem;
+  font-size: 2.4rem;
+  color: var(--color-text-dark);
+}
+
+.search-icon:hover {
+  color: var(--color-text);
 }
 
 @media (max-width: 435px) {
