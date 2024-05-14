@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { useEventKey } from "../hooks/useEventKey";
+import { HiOutlineSearch } from "react-icons/hi";
 
 import PropTypes from "prop-types";
 
@@ -23,14 +24,19 @@ function Search({ query, setQuery }) {
   useEventKey("NumpadEnter", setEvent);
 
   return (
-    <input
-      className={styles.search}
-      type="text"
-      placeholder="Enter keywords..."
-      value={query}
-      onChange={(e) => setQuery(e.target.value)}
-      ref={searchElem}
-    />
+    <div className={styles["search-container"]}>
+      <input
+        className={styles.search}
+        type="text"
+        placeholder="Enter keywords..."
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        ref={searchElem}
+      />
+      <div>
+        <HiOutlineSearch />
+      </div>
+    </div>
   );
 }
 
