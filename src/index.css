@@ -28,7 +28,6 @@
   --color-primary: #104736;
   --color-primary-light: #1b7a5d;
   --color-text: #94c3ac;
-  /* --color-text: #51675c; */
   --color-text-dark: #ceecd8;
   --color-background-100: #5b9569;
   --color-background-500: #5db36d;
@@ -102,6 +101,12 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-background-100);
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 2.5rem 5rem;
+  }
 }
 
 @media (max-width: 435px) {

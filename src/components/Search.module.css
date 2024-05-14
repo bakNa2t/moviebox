@@ -41,13 +41,19 @@
   color: var(--color-text);
 }
 
+@media (max-width: 768px) {
+  .search:focus {
+    width: 40rem;
+  }
+}
+
 @media (max-width: 435px) {
   .search {
-    width: 20rem;
+    width: 16rem;
     font-size: 1.4rem;
     padding: 1rem 1.3rem;
   }
   .search:focus {
-    width: 25rem;
+    width: 23rem;
   }
 }
