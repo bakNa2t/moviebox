@@ -33,9 +33,7 @@ function Search({ query, setQuery }) {
         onChange={(e) => setQuery(e.target.value)}
         ref={searchElem}
       />
-      <div>
-        <HiOutlineSearch />
-      </div>
+      <HiOutlineSearch className={styles["search-icon"]} />
     </div>
   );
 }
