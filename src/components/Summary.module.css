@@ -38,6 +38,15 @@
   text-shadow: 2px 2px 3px var(--color-background-900);
 }
 
+@media (max-width: 768px) {
+  .summary {
+    padding: 2.2rem 1.5rem 1.8rem;
+  }
+  .summary div {
+    gap: 1rem;
+  }
+}
+
 @media (max-width: 435px) {
   .summary {
     padding: 2.2rem 2.5rem 1.8rem 2.5rem;
