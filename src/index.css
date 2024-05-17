@@ -58,14 +58,15 @@ body {
 .btn-mode {
   position: absolute;
   top: 0.8rem;
-  right: 0.8rem;
-  height: 2.5rem;
+  right: 2.4rem;
+  padding: 0.4rem;
   aspect-ratio: 1;
-  border-radius: 50%;
+  border-radius: 5px;
   border: none;
+  color: var(--color-primary);
   background-color: transparent;
-  /* border: 1px solid transparent; */
-  font-size: 1.4rem;
+  border: 1px solid transparent;
+  font-size: 2.2rem;
   font-weight: bold;
   cursor: pointer;
   z-index: 999;
@@ -79,6 +80,7 @@ body {
 
 .btn-mode:hover {
   opacity: 1;
+  border: 1px solid var(--color-primary);
   transition: all 0.3s ease-in-out;
 }
 
@@ -114,7 +116,7 @@ body {
     padding: 2.5rem 3.1rem;
   }
   .btn-mode {
-    right: 0.6rem;
-    top: 0.6rem;
+    right: 0.4rem;
+    top: 0.4rem;
   }
 }
