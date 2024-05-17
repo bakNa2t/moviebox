@@ -1,4 +1,4 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, useEffect } from "react";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 
 import PropTypes from "prop-types";
@@ -10,15 +10,31 @@ function ThemeLightDarkToggleProvider({ children }) {
     children: PropTypes.node.isRequired,
   };
 
-  const [isLightMode, setIsLightMode] = useLocalStorage(false, "isLightMode");
+  const [isLightTheme, setIsLightTheme] = useLocalStorage(
+    false,
+    "isLightTheme"
+  );
 
-  function handleToggleThemeMode() {
-    setIsLightMode((isLightMode) => !isLightMode);
+  useEffect(
+    function () {
+      if (isLightTheme) {
+        document.documentElement.classList.add("theme-light");
+        document.documentElement.classList.remove("theme-dark");
+      } else {
+        document.documentElement.classList.add("theme-dark");
+        document.documentElement.classList.remove("theme-light");
+      }
+    },
+    [isLightTheme]
+  );
+
+  function handleToggleTheme() {
+    setIsLightTheme((isLight) => !isLight);
   }
 
   return (
     <ThemeLightDarkToggleContext.Provider
-      value={{ isLightMode, handleToggleThemeMode }}
+      value={{ isLightTheme, handleToggleTheme }}
     >
       {children}
     </ThemeLightDarkToggleContext.Provider>
@@ -32,6 +48,7 @@ function useThemeToggle() {
     throw new Error(
       "ThemeLightDarkToggleContext was used outside of ThemeLightDarkToggleProvider"
     );
+  return context;
 }
 
 export { ThemeLightDarkToggleProvider, useThemeToggle };

@@ -1,12 +1,14 @@
 import { HiOutlineMoon, HiOutlineSun } from "react-icons/hi";
+import { useThemeToggle } from "../context/themeLightDarkToggle";
+
 import Button from "./Button";
 
 function ButtonTheme() {
-  const [isLightMode, setIsLightMode] = useThemeToggle();
+  const { isLightTheme, handleToggleTheme } = useThemeToggle();
 
   return (
-    <Button className="btn-mode">
-      {isLightMode ? <HiOutlineMoon /> : <HiOutlineSun />}
+    <Button className="btn-mode" onClick={handleToggleTheme}>
+      {isLightTheme ? <HiOutlineMoon /> : <HiOutlineSun />}
     </Button>
   );
 }

@@ -1,7 +1,7 @@
 /* @import "https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap"; */
 @import "https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap";
 
-:root {
+:root.theme-dark {
   --color-primary: #08c6ab;
   --color-primary-light: #10ad95;
   --color-text: #d8f3dc;
@@ -24,7 +24,7 @@
 }
 
 /* Ligth mode */
-.theme-light {
+:root.theme-light {
   --color-primary: #104736;
   --color-primary-light: #1b7a5d;
   --color-text: #94c3ac;
